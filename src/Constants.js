@@ -9,4 +9,5 @@ export const DEFAULT = {
   timerRunnning: false,
   MM: 25,
   SS: 0,
-  timerInstance: null };
+  timerInstance: null
+};

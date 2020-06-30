@@ -4,7 +4,7 @@ import BreakPanel from './BreakPanel';
 import SessionPanel from './SessionPanel';
 import TimerPanel from './TimerPanel';
 import TimerControl from './TimerControl';
-import {DEFAULT, TIMER_RUNNING_BREAK, TIMER_RUNNING_SESSION} from './Constants';
+import { DEFAULT, TIMER_RUNNING_BREAK, TIMER_RUNNING_SESSION } from './Constants';
 
 // get our fontawesome imports
 import 'font-awesome/css/font-awesome.min.css';
@@ -123,14 +123,18 @@ class App extends React.Component {
       // Reached end of Session or break.
       console.log("Swap Session Break");
       if (this.state.timerState === TIMER_RUNNING_SESSION) {
-        this.setState({ timerState: TIMER_RUNNING_BREAK,
+        this.setState({
+          timerState: TIMER_RUNNING_BREAK,
           SS: 0,
-          MM: this.state.breakLength });
+          MM: this.state.breakLength
+        });
 
       } else {
-        this.setState({ timerState: TIMER_RUNNING_SESSION,
+        this.setState({
+          timerState: TIMER_RUNNING_SESSION,
           SS: 0,
-          MM: this.state.sessionLength });
+          MM: this.state.sessionLength
+        });
 
       }
       return;
@@ -143,8 +147,10 @@ class App extends React.Component {
     } else {
       min = min - 1;
       sec = 59;
-      this.setState({ MM: min,
-        SS: sec });
+      this.setState({
+        MM: min,
+        SS: sec
+      });
 
 
     }
@@ -172,60 +178,44 @@ class App extends React.Component {
     this.setState(DEFAULT);
   }
 
+
   render() {
     return (
-      React.createElement("div", { id: "container", className: "grid-container" },
-      React.createElement("div", { id: "title", className: "grid-item title" }, "Pomodoro Clock"),
 
-      React.createElement(BreakPanel, {
-        breakLength: this.state.breakLength,
-        breakDecrementCB: this.breakDecrementCB,
-        breakIncrementCB: this.breakIncrementCB }),
+      <div className="container">
+        <div id="title" className="title">
+          <h2>Pomodoro Clock</h2>
+          <div className="singleLine">
+            <BreakPanel breakLength={this.state.breakLength}
+              breakDecrementCB={this.breakDecrementCB}
+              breakIncrementCB={this.breakIncrementCB} />
 
-      React.createElement(SessionPanel, {
-        sessionLength: this.state.sessionLength,
-        sessionDecrementCB: this.sessionDecrementCB,
-        sessionIncrementCB: this.sessionIncrementCB }),
+            <SessionPanel
+              sessionLength={this.state.sessionLength}
+              sessionDecrementCB={this.sessionDecrementCB}
+              sessionIncrementCB={this.sessionIncrementCB} />
+          </div>
 
-      React.createElement(TimerPanel, {
-        timerState: this.state.timerState,
-        MM: this.state.MM,
-        SS: this.state.SS }),
+          <div className="singleLine">
+            <TimerPanel
+              timerState={this.state.timerState}
+              MM={this.state.MM}
+              SS={this.state.SS} />
+          </div>
 
-      React.createElement(TimerControl, {
-        timerPlay: this.timerPlayCB,
-        timerPause: this.timerPauseCB,
-        timerRefresh: this.timerRefreshCB })));
+          <div className="singleLine">
+            <TimerControl
+              timerPlay={this.timerPlayCB}
+              timerPause={this.timerPauseCB}
+              timerRefresh={this.timerRefreshCB} />
+          </div>
+        </div>
+      </div >
 
-
-
-  } // render
+    )
+  } //render
 
 } // App
-
-
-/**
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-*/
 
 
 export default App;
