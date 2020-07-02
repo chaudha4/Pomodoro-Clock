@@ -28,7 +28,7 @@ class BreakPanel extends React.Component {
           onClick={this.props.breakDecrementCB}></i>
         <b id="break-length">{this.props.breakLength}</b>
         <i id="break-decrement" class="fa fa-arrow-up"
-          onClick={this.props.breakDecrementCB}></i>
+          onClick={this.props.breakIncrementCB}></i>
       </div>
     );
   } //render
