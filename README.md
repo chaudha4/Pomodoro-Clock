@@ -1,6 +1,32 @@
 # A React App to implement a Pomodoro Clock
 
 
+## Create/Update a package.json file
+```
+npm init
+```
+
+## Installing from package.json
+```
+npm install 
+```
+
+## List of installed packages:
+```
+npm list
+```
+
+## List outdated packages
+```
+npm outdated
+```
+
+## Fix vulnerabilities:
+```
+npm audit fix
+```
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
