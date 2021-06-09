@@ -8,14 +8,14 @@ class SessionPanel extends React.Component {
         React.createElement("h3", null, "Session Length"),
         React.createElement("i", {
           id: "session-decrement",
-          class: "fa fa-arrow-down",
+          className: "fa fa-arrow-down",
           onClick: this.props.sessionDecrementCB
         }),
 
         React.createElement("b", { id: "session-length" }, this.props.sessionLength),
         React.createElement("i", {
           id: "session-increment",
-          class: "fa fa-arrow-up",
+          className: "fa fa-arrow-up",
           onClick: this.props.sessionIncrementCB
         })));
 

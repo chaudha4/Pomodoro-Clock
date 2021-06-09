@@ -24,10 +24,10 @@ class BreakPanel extends React.Component {
     return (
       <div id="break-label" className="panel">
         <h3>Break Length</h3>
-        <i id="break-decrement" class="fa fa-arrow-down"
+        <i id="break-decrement" className="fa fa-arrow-down"
           onClick={this.props.breakDecrementCB}></i>
         <b id="break-length">{this.props.breakLength}</b>
-        <i id="break-decrement" class="fa fa-arrow-up"
+        <i id="break-decrement" className="fa fa-arrow-up"
           onClick={this.props.breakIncrementCB}></i>
       </div>
     );
