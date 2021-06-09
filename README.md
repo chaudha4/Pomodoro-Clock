@@ -1,9 +1,16 @@
 # A React App to implement a Pomodoro Clock
+[<img align="center" src="./public/1.png" />](https://brave-island-05ebfcd0f.azurestaticapps.net)
 
 
 ## Create/Update a package.json file
 ```
 npm init
+```
+
+## Update packages
+The npm update command allows you to update any out-of-date packages, according to your package.json versions. This is the default way to update packages with npm.
+```
+npm update
 ```
 
 ## Installing from package.json
